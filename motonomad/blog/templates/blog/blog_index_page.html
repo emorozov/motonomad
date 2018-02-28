@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% load bootstrap_pagination %}
+
+{% block title %}{{ page.title }}{% endblock %}
+
+{% block content %}
+  {% for post in posts.object_list %}
+      {% include "blog/post-item.html" with page=post %}
+  {% endfor %}
+
+  {% if posts.has_previous or posts.has_next %}
+      {% bootstrap_paginate posts %}
+  {% endif %}
+{% endblock %}

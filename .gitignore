@@ -99,3 +99,14 @@ ENV/
 
 # mypy
 .mypy_cache/
+
+# yarn
+node_modules
+yarn.lock
+
+# PyCharm
+.idea
+
+# motonomad
+motonomad/settings/local.py
+

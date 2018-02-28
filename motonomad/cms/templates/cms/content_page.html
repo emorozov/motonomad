@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% load wagtailuserbar wagtailcore_tags %}
+
+{% block title %}{{ page.title }}{% endblock %}
+
+{% block content %}
+  <div class="blog-post">
+    {% include_block page.body %}
+  </div>
+  {% wagtailuserbar %}
+{% endblock %}

@@ -1,0 +1,26 @@
+{% load wagtailcore_tags %}
+<div class="blog-post">
+  <h2 class="blog-post-title"><a href="{{ page.url }}">{{ page.title }}</a></h2>
+  <p class="blog-post-meta">
+    <time datetime="{{ page.last_published_at|date:"c" }}">{{ page.last_published_at|date:"j.m.Y H:i" }}</time>
+  </p>
+
+  {% if page.tease %}
+    {{ page.tease|richtext }}
+
+    <p>
+      <a href="{{ page.url }}">Читать далее&hellip;</a>
+    </p>
+  {% else %}
+    {% include_block page.body %}
+  {% endif %}
+
+  {% if page.tags.exists %}
+    <p class="inline_tag_list"><strong>Метки:</strong>
+      {% for tag in page.tags.all %}
+        {{ tag.name }}{% if not forloop.last %}, {% endif %}
+      {% endfor %}
+    </p>
+  {% endif %}
+</div>
+

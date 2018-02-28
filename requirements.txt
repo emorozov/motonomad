@@ -1,0 +1,8 @@
+Django>=2.0,<2.1
+wagtail>=2.0b1,<2.1
+psycopg2
+django-bootstrap-pagination
+django-debug-toolbar
+ipython
+ipdb
+
